@@ -1,0 +1,9 @@
+{% block share_buttons %}
+    <div class="share-buttons">
+        {% for name, button in shareButtons %}
+            <div class="share-buttons-provider share-buttons-provider-{{ name|replace({'_': '-', ' ': '-'}) }}">
+                {{ button|raw }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

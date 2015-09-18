@@ -1,0 +1,15 @@
+.share-buttons {
+    display: inline-block;
+    background: #F8F8F8;
+    padding: 10px 10px 5px 10px;
+}
+
+.share-buttons-provider {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.share-buttons div:last-child {
+    margin-right: 0;
+}

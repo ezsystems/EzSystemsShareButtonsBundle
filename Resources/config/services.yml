@@ -1,0 +1,63 @@
+parameters:
+    ez_share_buttons.renderer.class: EzSystems\ShareButtonsBundle\SocialShare\ShareButtonsRenderer
+    ez_share_buttons.twig.extension.class: EzSystems\ShareButtonsBundle\Twig\Extension\ShareButtonsExtension
+    ez_share_buttons.provider.factory.class:  EzSystems\ShareButtonsBundle\SocialShare\Provider\SiteAccessAwareFactory
+    ez_share_buttons.provider.facebook_like.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\FacebookLike
+    ez_share_buttons.provider.facebook_recommend.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\FacebookRecommend
+    ez_share_buttons.provider.twitter.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\Twitter
+    ez_share_buttons.provider.linkedin.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\Linkedin
+    ez_share_buttons.provider.google_plus.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\GooglePlus
+
+services:
+    ez_share_buttons.renderer:
+        class: %ez_share_buttons.renderer.class%
+        arguments:
+            - @ezpublish.config.resolver
+
+    ez_share_buttons.twig.extension:
+        class: %ez_share_buttons.twig.extension.class%
+        arguments:
+            - @ezpublish.config.resolver
+            - @ez_share_buttons.renderer
+        tags:
+            - { name: twig.extension }
+
+    ez_share_buttons.provider.factory:
+        class: %ez_share_buttons.provider.factory.class%
+        arguments:
+            - @ezpublish.config.resolver
+
+    ez_share_buttons.provider.facebook_like:
+        class: %ez_share_buttons.provider.facebook_like.class%
+        factory: ["@ez_share_buttons.provider.factory", buildFacebookLike]
+        lazy: true
+        tags:
+            - { name: ez_share_buttons.provider, alias: facebook_like }
+
+    ez_share_buttons.provider.facebook_recommend:
+        class: %ez_share_buttons.provider.facebook_recommend.class%
+        factory: ["@ez_share_buttons.provider.factory", buildFacebookRecommend]
+        lazy: true
+        tags:
+            - { name: ez_share_buttons.provider, alias: facebook_recommend }
+
+    ez_share_buttons.provider.twitter:
+        class: %ez_share_buttons.provider.twitter.class%
+        factory: ["@ez_share_buttons.provider.factory", buildTwitter]
+        lazy: true
+        tags:
+            - { name: ez_share_buttons.provider, alias: twitter }
+
+    ez_share_buttons.provider.linkedin:
+        class: %ez_share_buttons.provider.linkedin.class%
+        factory: ["@ez_share_buttons.provider.factory", buildLinkedin]
+        lazy: true
+        tags:
+            - { name: ez_share_buttons.provider, alias: linkedin }
+
+    ez_share_buttons.provider.google_plus:
+        class: %ez_share_buttons.provider.google_plus.class%
+        factory: ["@ez_share_buttons.provider.factory", buildGooglePlus]
+        lazy: true
+        tags:
+            - { name: ez_share_buttons.provider, alias: google_plus }

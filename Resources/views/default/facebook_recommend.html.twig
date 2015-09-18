@@ -1,0 +1,17 @@
+{% block share_buttons_service %}
+    <div id="fb-root"></div>
+
+    <script>
+        {% autoescape 'js' %}
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        {% endautoescape %}
+    </script>
+
+    <div class="fb-like" data-href="{{ app.request.uri }}" data-layout="{{ layout }}" {% if width is not empty %}data-width="{{ width }}" {% endif %}data-action="recommend" data-show-faces="{% if showFaces %}true{% else %}false{% endif %}" data-share="{% if share %}true{% else %}false{% endif %}"></div>
+{% endblock %}

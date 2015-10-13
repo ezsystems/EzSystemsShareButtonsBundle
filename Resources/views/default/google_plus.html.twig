@@ -1,0 +1,6 @@
+{% block share_buttons_service %}
+    <script src="https://apis.google.com/js/platform.js" async defer>
+        {lang: '{{ language }}'}
+    </script>
+    <div class="g-plusone" data-size="{{ size }}"{% if annotation != 'bubble' %} data-annotation="{{ annotation }}"{% endif %} {% if size %}data-width="{{ size }}" {% endif %}data-href="{{ app.request.uri }}"></div>
+{% endblock %}

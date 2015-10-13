@@ -1,0 +1,9 @@
+{% block share_buttons_service %}
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ app.request.uri }}" data-count="none"{% if not showUsername %} data-show-screen-name="false"{% endif %}{% if largeButton %} data-size="large"{% endif %}{% if language %} data-lang="{{ language }}"{% endif %}>Tweet</a>
+
+    <script>
+        {% autoescape 'js' %}
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        {% endautoescape %}
+    </script>
+{% endblock %}

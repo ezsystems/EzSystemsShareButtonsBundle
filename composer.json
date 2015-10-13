@@ -1,0 +1,20 @@
+{
+  "name": "ezsystems/share-buttons-bundle",
+  "description": "Social share buttons integration bundle into eZ Publish/eZ Platform",
+  "keywords": ["share", "social", "buttons", "facebook", "google plus", "linkedin", "twitter"],
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "eZ Publish dev-team & eZ Community",
+      "homepage": "https://github.com/ezsystems/EzSystemsShareButtonsBundle/contributors"
+    }
+  ],
+  "require": {
+    "symfony/symfony": "~2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "EzSystems\\ShareButtonsBundle\\": ""
+    }
+  }
+}

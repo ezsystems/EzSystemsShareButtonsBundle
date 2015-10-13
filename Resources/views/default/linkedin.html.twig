@@ -1,0 +1,9 @@
+{% block share_buttons_service %}
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">
+        {% autoescape 'js' %}
+            lang: {{ language }}
+        {% endautoescape %}
+    </script>
+
+    <script type="IN/Share" data-url="{{ app.request.uri }}"{% if countMode != 'none' %} data-counter="{{ countMode }}"{% endif %}></script>
+{% endblock %}

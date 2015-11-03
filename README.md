@@ -75,7 +75,7 @@ ez_share_buttons:
             linkedin:
                 # available options are: top, right, none
                 count_mode: none
-                linkedin.language: en_US
+                language: en_US
 
             google_plus:
                 # available options are: small, medium, standard, tall

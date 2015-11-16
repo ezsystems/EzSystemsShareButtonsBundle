@@ -1,5 +1,6 @@
 <?php
 /**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\ShareButtonsBundle\SocialShare\Provider;
@@ -68,20 +69,16 @@ abstract class TemplateBasedProvider implements ProviderInterface
      * Performs share button rendering.
      *
      * @param array $options
+     *
      * @return string
      *
      * @throws \InvalidArgumentException if template engine is not set
-     * @throws \InvalidArgumentException if template name (theme) is not set
      * @throws \InvalidArgumentException if provider label is not set
      */
     protected function doRender(array $options)
     {
         if (!isset($this->templateEngine)) {
             throw new InvalidArgumentException('Missing template engine');
-        }
-
-        if (!isset($this->templateName)) {
-            throw new InvalidArgumentException('Missing template (theme) name');
         }
 
         if (!isset($this->label)) {
@@ -96,7 +93,7 @@ abstract class TemplateBasedProvider implements ProviderInterface
         }
 
         $template = sprintf(
-            '@EzSystemsShareButtonsBundle/Resources/views/%s/%s',
+            'EzSystemsShareButtonsBundle::%s/%s',
             $this->templateName,
             $options['template']
         );

@@ -108,7 +108,7 @@ Currently, `ShareButtonsBundle` is working with the following social share servi
 
 ## Usage
 
-Insert the following Twig helper in place where you want to display share buttons bar:
+Insert the following Twig helper in the place where you want to display the share buttons bar:
 
 ```twig
 {{ show_share_buttons() }}

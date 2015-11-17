@@ -4,10 +4,10 @@ This bundle adds social share buttons into Symfony 2 application (eZ Publish / e
 
 ## Requirements
 
-- any Symfony v2.6 or newer application.
+- Symfony v2.6 or later.
 
 ## Installation
-This package is available via composer, so the instructions below are similar to how you install any other open source Symfony Bundle.
+This package is available via Composer, so the instructions below are similar to how you install any other open source Symfony Bundle.
 
 Run the following command in a terminal, from your Symfony installation root (pick most recent release):
 
@@ -15,7 +15,7 @@ Run the following command in a terminal, from your Symfony installation root (pi
 php composer.phar require ezsystems/share-buttons-bundle
 ```
 
-Enable the bundle in `app/AppKernel.php` (for regular Symfony application) or `ezpublish\EzPublishKernel.php` (for eZ Publish / eZ Platform):
+Enable the bundle in `app/AppKernel.php` file (for regular Symfony application) or `ezpublish\EzPublishKernel.php` file (for eZ Publish / eZ Platform):
 
 ```php
 $bundles = array(
@@ -24,7 +24,7 @@ $bundles = array(
 );
 ```
 
-Install additional assets (CSS) for default template (bypass this step if you're planning to use custom stylesheets):
+Install additional assets (CSS) for default template (omit this step if you are planning to use custom stylesheets):
 
 ```twig
 {% stylesheets
@@ -36,7 +36,7 @@ Install additional assets (CSS) for default template (bypass this step if you're
 
 ## Configuration
 
-The bundle's configuration is siteaccess aware. This is an example of settings (config.yml):
+The bundle's configuration depends on siteaccess. This is an example of settings (`config.yml`):
 
 ```yaml
 ez_share_buttons:
@@ -90,7 +90,7 @@ ez_share_buttons:
 
 ### Comments abstraction
 
-ShareButtonsBundle is **provider based**. This means that it is open to **any kind of social share services**.
+`ShareButtonsBundle` is **provider based**. This means that it is open to **any kind of social share services**.
 
 ### Single entry point
 
@@ -98,7 +98,7 @@ Render your social share buttons with a single line of code.
 
 ## Available integration
 
-ShareButtonsBundle currently works with the following social share services:
+Currently, `ShareButtonsBundle` is working with the following social share services:
 
 * Facebook like
 * Facebook recommend
@@ -108,13 +108,13 @@ ShareButtonsBundle currently works with the following social share services:
 
 ## Usage
 
-Place following Twig helper in place where you want to display share buttons bar:
+Insert the following Twig helper in place where you want to display share buttons bar:
 
 ```twig
 {{ show_share_buttons() }}
 ```
 
-You can override existing siteaccess configuration for ShareButtonsBundle by adding additional arguments:
+You can override existing siteaccess configuration for `ShareButtonsBundle` by adding additional arguments:
  
  ```twig
  {{ show_share_buttons(
@@ -128,7 +128,7 @@ You can override existing siteaccess configuration for ShareButtonsBundle by add
  ) }}
  ```
  
- More practical example of use:
+ More practical example of the usage:
  
  ```twig
  {{ show_share_buttons(

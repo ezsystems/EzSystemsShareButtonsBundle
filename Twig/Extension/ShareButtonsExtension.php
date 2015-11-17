@@ -1,5 +1,6 @@
 <?php
 /**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\ShareButtonsBundle\Twig\Extension;
@@ -69,6 +70,7 @@ class ShareButtonsExtension extends Twig_Extension
      * @param \Twig_Environment $twigEnvironment
      * @param array $options
      * @param string[] $providers
+     *
      * @return string
      *
      * @throws \InvalidArgumentException if template was not found
@@ -88,19 +90,8 @@ class ShareButtonsExtension extends Twig_Extension
             $options['template'] = $this->configResolver->getParameter('template', 'ez_share_buttons');
         }
 
-        if (!file_exists(sprintf(
-            '%s/../../Resources/views/%s.html.twig',
-            __DIR__,
-            $options['template']
-        ))) {
-            throw new InvalidArgumentException(sprintf(
-                'Template with name `%s.html.twig` was not found in views directory of EzSystemsShareButtonBundle.',
-                $options['template']
-            ));
-        }
-
         return $twigEnvironment->render(sprintf(
-            '@EzSystemsShareButtonsBundle/Resources/views/%s.html.twig',
+            'EzSystemsShareButtonsBundle::%s.html.twig',
             $options['template']
         ), array(
             'shareButtons' => $this->shareButtonsRenderer->render($options),

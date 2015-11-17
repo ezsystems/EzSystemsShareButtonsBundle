@@ -1,5 +1,6 @@
 <?php
 /**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\ShareButtonsBundle\SocialShare;
@@ -86,6 +87,7 @@ class ShareButtonsRenderer implements ProviderInterface
      * Retrieves a share button provider from collection by its label.
      *
      * @param string $label
+     *
      * @return \EzSystems\ShareButtonsBundle\SocialShare\ProviderInterface
      *
      * @throws \InvalidArgumentException
@@ -103,6 +105,7 @@ class ShareButtonsRenderer implements ProviderInterface
      * Renders the share buttons list.
      *
      * @param array $options
+     *
      * @return string[]
      */
     public function render(array $options = array())

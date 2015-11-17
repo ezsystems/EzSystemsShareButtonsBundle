@@ -1,5 +1,6 @@
 <?php
 /**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\ShareButtonsBundle\DependencyInjection;
@@ -9,6 +10,9 @@ use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAw
 
 class ConfigurationMapper implements HookableConfigurationMapperInterface
 {
+    /**
+     * {@inheritdoc}
+     */
     public function mapConfig(array &$scopeSettings, $currentScope, ContextualizerInterface $contextualizer)
     {
         // common settings
@@ -81,10 +85,16 @@ class ConfigurationMapper implements HookableConfigurationMapperInterface
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function preMap(array $config, ContextualizerInterface $contextualizer)
     {
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function postMap(array $config, ContextualizerInterface $contextualizer)
     {
     }

@@ -2,11 +2,12 @@ parameters:
     ez_share_buttons.renderer.class: EzSystems\ShareButtonsBundle\SocialShare\ShareButtonsRenderer
     ez_share_buttons.twig.extension.class: EzSystems\ShareButtonsBundle\Twig\Extension\ShareButtonsExtension
     ez_share_buttons.provider.factory.class:  EzSystems\ShareButtonsBundle\SocialShare\Provider\SiteAccessAwareFactory
-    ez_share_buttons.provider.facebook_like.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\FacebookLike
-    ez_share_buttons.provider.facebook_recommend.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\FacebookRecommend
-    ez_share_buttons.provider.twitter.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\Twitter
-    ez_share_buttons.provider.linkedin.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\Linkedin
-    ez_share_buttons.provider.google_plus.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\GooglePlus
+    ez_share_buttons.provider.facebook_like.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\FacebookLikeProvider
+    ez_share_buttons.provider.facebook_recommend.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\FacebookRecommendProvider
+    ez_share_buttons.provider.twitter.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\TwitterProvider
+    ez_share_buttons.provider.linkedin.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\LinkedinProvider
+    ez_share_buttons.provider.google_plus.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\GooglePlusProvider
+    ez_share_buttons.provider.xing.class: EzSystems\ShareButtonsBundle\SocialShare\Provider\XingProvider
 
 services:
     ez_share_buttons.renderer:
@@ -61,3 +62,10 @@ services:
         lazy: true
         tags:
             - { name: ez_share_buttons.provider, alias: google_plus }
+
+    ez_share_buttons.provider.xing:
+        class: %ez_share_buttons.provider.xing.class%
+        factory: ["@ez_share_buttons.provider.factory", buildXing]
+        lazy: true
+        tags:
+            - { name: ez_share_buttons.provider, alias: xing }

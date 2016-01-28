@@ -83,6 +83,17 @@ class ConfigurationMapper implements HookableConfigurationMapperInterface
         if (isset($scopeSettings['google_plus.language'])) {
             $contextualizer->setContextualParameter('google_plus.language', $currentScope, $scopeSettings['google_plus.language']);
         }
+
+        // Xing settings
+        if (isset($scopeSettings['xing.shape'])) {
+            $contextualizer->setContextualParameter('xing.shape', $currentScope, $scopeSettings['xing.shape']);
+        }
+        if (isset($scopeSettings['xing.counter'])) {
+            $contextualizer->setContextualParameter('xing.counter', $currentScope, $scopeSettings['xing.counter']);
+        }
+        if (isset($scopeSettings['xing.language'])) {
+            $contextualizer->setContextualParameter('xing.language', $currentScope, $scopeSettings['xing.language']);
+        }
     }
 
     /**

@@ -49,6 +49,7 @@ ez_share_buttons:
                 - twitter
                 - linkedin
                 - google_plus
+                - xing
             template: default
             
             facebook_like:
@@ -84,6 +85,15 @@ ez_share_buttons:
                 annotation: none
                 width: ~
                 language: en-GB
+
+            xing:
+                # available options are: square, none
+                shape: none
+                # available options are: right, top, none
+                counter: none
+                # available options are: de, none
+                language: none
+
 ```
 
 ## Features
@@ -105,6 +115,7 @@ Currently, `ShareButtonsBundle` is working with the following social share servi
 * Google Plus
 * LinkedIn share
 * Twitter
+* Xing
 
 ## Usage
 

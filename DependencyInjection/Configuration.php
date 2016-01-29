@@ -26,6 +26,7 @@ class Configuration extends SiteAccessConfiguration
         $this->addGooglePlusSettings($systemNode);
         $this->addTwitterSettings($systemNode);
         $this->addLinkedinSettings($systemNode);
+        $this->addXingSettings($systemNode);
 
         return $treeBuilder;
     }
@@ -101,6 +102,18 @@ class Configuration extends SiteAccessConfiguration
                     ->scalarNode('size')->isRequired()->end()
                     ->scalarNode('annotation')->isRequired()->end()
                     ->scalarNode('width')->isRequired()->end()
+                    ->scalarNode('language')->isRequired()->end()
+                ->end()
+            ->end();
+    }
+
+    private function addXingSettings(NodeBuilder $nodeBuilder)
+    {
+        $nodeBuilder
+            ->arrayNode('xing')
+                ->children()
+                    ->scalarNode('shape')->isRequired()->end()
+                    ->scalarNode('counter')->isRequired()->end()
                     ->scalarNode('language')->isRequired()->end()
                 ->end()
             ->end();

@@ -5,6 +5,7 @@ parameters:
         - twitter
         - linkedin
         - google_plus
+        - xing
 
     ez_share_buttons.default.template: default
 
@@ -36,3 +37,10 @@ parameters:
     ez_share_buttons.default.google_plus.annotation: none
     ez_share_buttons.default.google_plus.width: ~
     ez_share_buttons.default.google_plus.language: en-GB
+
+    # available options are: square, none
+    ez_share_buttons.default.xing.shape: none
+    # available options are: right, top, none
+    ez_share_buttons.default.xing.counter: none
+    # available options are: de, none
+    ez_share_buttons.default.xing.language: none

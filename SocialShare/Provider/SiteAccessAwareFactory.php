@@ -117,4 +117,20 @@ class SiteAccessAwareFactory
 
         return $googlePlusProvider;
     }
+
+    /**
+     * Builds Xing button provider.
+     *
+     * @return \EzSystems\ShareButtonsBundle\SocialShare\ProviderInterface
+     */
+    public function buildXing()
+    {
+        $xingProvider = new XingProvider(array(
+            'shape' => $this->configResolver->getParameter('xing.shape', 'ez_share_buttons'),
+            'counter' => $this->configResolver->getParameter('xing.counter', 'ez_share_buttons'),
+            'language' => $this->configResolver->getParameter('xing.language', 'ez_share_buttons'),
+        ));
+
+        return $xingProvider;
+    }
 }

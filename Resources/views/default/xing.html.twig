@@ -1,0 +1,13 @@
+{% block share_buttons_service %}
+    <div data-type="xing/share"{% if shape != 'none' %} data-shape="{{ shape }}"{% endif %}{% if counter != 'none' %} data-counter="{{ counter }}"{% endif %}{% if language != 'none' %} data-lang="{{ language }}"{% endif %}></div>
+    <script>
+        {% autoescape 'js' %}
+            ;(function (d, s) {
+                var x = d.createElement(s),
+                    s = d.getElementsByTagName(s)[0];
+                    x.src = "https://www.xing-share.com/plugins/share.js";
+                    s.parentNode.insertBefore(x, s);
+            })(document, "script");
+        {% endautoescape %}
+    </script>
+{% endblock %}

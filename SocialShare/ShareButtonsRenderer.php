@@ -17,9 +17,6 @@ class ShareButtonsRenderer implements ProviderInterface
     /** @var array providers enabled by default (defined in siteaccess aware configuration) */
     private $defaultProviders = array();
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
-    private $configResolver;
-
     /** @var \Twig_Environment */
     private $templateEngine;
 
@@ -41,7 +38,6 @@ class ShareButtonsRenderer implements ProviderInterface
      */
     public function __construct(ConfigResolverInterface $configResolver, array $providers = array())
     {
-        $this->configResolver = $configResolver;
         $this->providers = $providers;
         $this->setDefaultProvidersList($configResolver->getParameter('providers', 'ez_share_buttons'));
     }

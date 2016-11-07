@@ -1,5 +1,7 @@
 # Share Buttons Bundle
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/8f309360-c70a-486f-9d7f-b50868fce663/big.png)](https://insight.sensiolabs.com/projects/8f309360-c70a-486f-9d7f-b50868fce663)
+
 This bundle adds social share buttons into Symfony 2 application (eZ Publish / eZ Platform).
 
 ## Requirements

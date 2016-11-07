@@ -10,7 +10,6 @@ use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use Twig_Extension;
 use Twig_SimpleFunction;
 use Twig_Environment;
-use InvalidArgumentException;
 
 /**
  * ShareButtons Twig extension.
@@ -72,8 +71,6 @@ class ShareButtonsExtension extends Twig_Extension
      * @param string[] $providers
      *
      * @return string
-     *
-     * @throws \InvalidArgumentException if template was not found
      */
     public function showShareButtons(
         Twig_Environment $twigEnvironment,

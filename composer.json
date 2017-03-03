@@ -3,6 +3,7 @@
   "description": "Social share buttons integration bundle into eZ Publish/eZ Platform",
   "keywords": ["share", "social", "buttons", "facebook", "google plus", "linkedin", "twitter"],
   "license": "GPL-2.0",
+  "type": "symfony-bundle",
   "authors": [
     {
       "name": "eZ Platform dev-team & eZ Community",

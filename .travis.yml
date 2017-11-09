@@ -1,0 +1,26 @@
+language: php
+
+php:
+    - 7.1
+
+# test only master and stable branches (+ Pull requests)
+branches:
+    only:
+        - master
+        - /^\d.\d+$/
+
+install:
+    # Disable XDebug for better performance
+    - phpenv config-rm xdebug.ini
+    # Avoid memory issues on composer install
+    - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+    # Get latest composer build
+    - travis_retry composer selfupdate
+    # Install packages
+    - travis_retry composer install --prefer-dist --no-interaction
+
+script:
+    - vendor/bin/php-cs-fixer fix -v --dry-run --diff --show-progress=estimating
+
+notifications:
+    email: false

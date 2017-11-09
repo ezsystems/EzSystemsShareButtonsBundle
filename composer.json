@@ -11,12 +11,18 @@
     }
   ],
   "require": {
-    "symfony/symfony": "~2.6"
+    "symfony/symfony": "~2.6 || ^3.3"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "~2.7.1"
   },
   "autoload": {
     "psr-4": {
       "EzSystems\\ShareButtonsBundle\\": ""
     }
+  },
+  "scripts": {
+    "fix-cs": "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
   },
   "extra": {
     "branch-alias": {
